@@ -7,6 +7,12 @@ As used for my personal laptop.
 - Incorporates [Home Manager](https://github.com/nix-community/home-manager),
   with substantial configuration for MATE Desktop and Firefox.
 
+- Extra support for debugging of binaries (executables & libraries) installed by
+  Nix packages (pre-built w/o rebuilding or locally-built), and also for
+  arbitrary binaries via dedicated per-user temporary directories, according to
+  your choice.  Automatic setup of GDB to find debug-info and source-code for
+  all these.  Options for Home Manager to configure all this.
+
 - Substantial Emacs configuration, and a little configuration for other apps.
   (Not managed by Home Manager.)
 
@@ -15,9 +21,9 @@ As used for my personal laptop.
 - Enables both: sharing changes between multiple users (via the `main` branch),
   and tracking private per-user dot-files (in private per-user branches).
 
-- Integrates with my [NixOS
-  configuration](https://github.com/DerickEddington/nixos-config), and provides
-  the "skeleton" for new user's home directories, giving reproducible consistent
+- Integrates with, and uses some of the options of, my [NixOS
+  configuration](https://github.com/DerickEddington/nixos-config).  Provides the
+  "skeleton" for new user's home directories, giving reproducible consistent
   user environments that can be tailored per-user.
 
 - [Companion support

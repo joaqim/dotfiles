@@ -16,6 +16,12 @@ As used for my personal laptop.
 - Substantial Emacs configuration, and a little configuration for other apps.
   (Not managed by Home Manager.)
 
+- GDB commands for generating LLVM (Clang, Rust, etc.) code-coverage reports
+  multiple times before a process exits, which is useful to see the current
+  coverage of a program before something else happens to it, and which is useful
+  when injecting function calls (and other alterations) via GDB to conduct
+  spontaneous tests and iteratively exploring the coverage effects.
+
 - Custom Bash prompt.
 
 - Enables both: sharing changes between multiple users (via the `main` branch),

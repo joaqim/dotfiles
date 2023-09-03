@@ -22,6 +22,13 @@ As used for my personal laptop.
   when injecting function calls (and other alterations) via GDB to conduct
   spontaneous tests and iteratively exploring the coverage effects.
 
+- Custom Bash history handling that archives each session's separately while
+  still starting each session with its initial history being the combined
+  histories of all sessions.  The grouping of each session's history is
+  preserved in the combined.  Removal of duplicates and of user-specified
+  ignores is done in the combined.  Extra effort is made to be robust with
+  multiple concurrent sessions and with other aspects.
+
 - Custom Bash prompt.
 
 - Enables both: sharing changes between multiple users (via the `main` branch),

@@ -5,22 +5,16 @@ As used for my personal laptop.
 ## Noteworthy Aspects
 
 - Incorporates [Home Manager](https://github.com/nix-community/home-manager),
-  with substantial configuration for MATE Desktop and Firefox.
+  with configuration for MATE Desktop and Firefox.
 
-- Extra support for debugging of binaries (executables & libraries) installed by
-  Nix packages (pre-built w/o rebuilding or locally-built), and also for
-  arbitrary binaries via dedicated per-user temporary directories, according to
-  your choice.  Automatic setup of GDB to find debug-info and source-code for
-  all these.  Options for Home Manager to configure all this.
+- Integrates with, and uses some of the options of, my [NixOS
+  configuration](https://github.com/DerickEddington/nixos-config).  Provides the
+  "skeleton" for new user's home directories, giving reproducible consistent
+  user environments that can be tailored per-user.
 
-- Substantial Emacs configuration, and a little configuration for other apps.
-  (Not managed by Home Manager.)
-
-- GDB commands for generating LLVM (Clang, Rust, etc.) code-coverage reports
-  multiple times before a process exits, which is useful to see the current
-  coverage of a program before something else happens to it, and which is useful
-  when injecting function calls (and other alterations) via GDB to conduct
-  spontaneous tests and iteratively exploring the coverage effects.
+- Substantial Emacs configuration with workarounds for prominent bugs in TRAMP,
+  LSP, etc.  A little configuration for other apps.  (Not managed by Home
+  Manager.)
 
 - Custom Bash history handling that archives each session's separately while
   still starting each session with its initial history being the combined
@@ -31,13 +25,20 @@ As used for my personal laptop.
 
 - Custom Bash prompt.
 
+- Extra support for debugging of binaries (executables & libraries) installed by
+  Nix packages (pre-built w/o rebuilding or locally-built), and also for
+  arbitrary binaries via dedicated per-user temporary directories, according to
+  your choice.  Automatic setup of GDB to find debug-info and source-code for
+  all these.  Options for Home Manager to configure all this.
+
+- GDB commands for generating LLVM (Clang, Rust, etc.) code-coverage reports
+  multiple times before a process exits, which is useful to see the current
+  coverage of a program before something else happens to it, and which is useful
+  when injecting function calls (and other alterations) via GDB to conduct
+  spontaneous tests and iteratively exploring the coverage effects.
+
 - Enables both: sharing changes between multiple users (via the `main` branch),
   and tracking private per-user dot-files (in private per-user branches).
-
-- Integrates with, and uses some of the options of, my [NixOS
-  configuration](https://github.com/DerickEddington/nixos-config).  Provides the
-  "skeleton" for new user's home directories, giving reproducible consistent
-  user environments that can be tailored per-user.
 
 - [Companion support
   script](https://github.com/DerickEddington/nixos-config/blob/main/users/setup-home)

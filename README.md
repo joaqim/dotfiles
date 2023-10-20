@@ -4,10 +4,24 @@ As used for my personal laptop.
 
 ## Noteworthy Aspects
 
-- Incorporates [Home Manager](https://github.com/nix-community/home-manager),
-  with configuration for MATE Desktop and Firefox.
+- Can deploy itself to a remote user's home directory in various POSIX OSs, by
+  invoking a single command that automates this.  Desirable for easily having my
+  personal setup in different hosts.
 
-- Integrates with, and uses some of the options of, my [NixOS
+- Platform-specific detection that installs packages and configures things to be
+  the same or similar in different OSs.  Based on a pathname scheme for
+  uniformly and hierarchically locating platform-specific and
+  architecture-specific parts, based on a scheme for identifying different
+  platforms.
+
+- Works when a home directory is simultaneously shared across multiple machines
+  of different OSs and different CPU architectures.
+
+- When in NixOS, incorporates [Home
+  Manager](https://github.com/nix-community/home-manager), with configuration
+  for MATE Desktop and Firefox.
+
+- When in NixOS, integrates with, and uses some of the options of, my [NixOS
   configuration](https://github.com/DerickEddington/nixos-config).  Provides the
   "skeleton" for new user's home directories, giving reproducible consistent
   user environments that can be tailored per-user.
@@ -48,5 +62,5 @@ As used for my personal laptop.
   repository.
 
 - [Companion
-  command](https://github.com/DerickEddington/nixos-config/blob/main/users/with-unhidden-gitdir.nix)
+  command](https://github.com/DerickEddington/dotfiles/blob/main/.local/bin/with-unhidden-gitdir)
   for temporarily unhiding `~/.git`, for working on dot-files changes.

@@ -15,6 +15,8 @@ As used for my personal laptop.
 
 - Custom Bash [prompt](https://github.com/DerickEddington/dotfiles/blob/main/.config/my/bash/interactive/prompt.bash).
 
+  <img src="prompt.png" alt="Screenshot of the prompt reacting to commands" width="75%">
+
 - Partitioning of SSH multiplexing, so that particular functionalities benefit
   from connection sharing within a specific functionality, but so that sharing
   is not done across separate functionalities in order to avoid one's

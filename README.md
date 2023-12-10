@@ -77,3 +77,49 @@ As used for my personal laptop.
 - [Companion
   command](https://github.com/DerickEddington/dotfiles/blob/main/.local/bin/with-unhidden-gitdir)
   for temporarily unhiding `~/.git`, for working on dot-files changes.
+
+## How to Try
+
+If you'd like to try my setup (which, beyond having the "dot" files, also
+installs some packages and also records the preexisting contents of the home
+directory):
+
+From a checkout of this repository:
+```shell
+REPO_DIR=de-dotfiles
+git clone --branch=main https://github.com/DerickEddington/dotfiles.git $REPO_DIR
+```
+
+To a remote user's home:
+```shell
+#VERBOSE=5                                                          \
+MY_DEPLOY_SETUP_DOTFILES_FROM_REPO=$REPO_DIR                        \
+XDG_DATA_HOME=$REPO_DIR/.local/share                                \
+  $REPO_DIR/.local/bin/my-deploy-setup ssh://[USER@]HOSTNAME[:PORT]
+```
+
+The target remote host should be a fresh VM (see the previous section above for
+which OSs are supported), and the host that clones the repo and runs
+`my-deploy-setup` could also be another fresh VM, so that you don't mess with
+your own hosts and users' homes, and so that you don't have to trust my code.
+
+Or, you can do all the above cloning and deploying commands in only a single
+host (which could be a fresh VM), by placing the clone outside of the target
+home dir (so it's not captured), and by replacing the `ssh://...` with
+`dir:$HOME` (so it targets the home dir in the same host).
+
+You can see that `my-deploy-setup` prepared a branch for the user's future
+changes to the home dir configs and that the preexisting contents of the home
+dir were recorded as a tagged commit in the history and then the new contents
+were merged with that:
+```shell
+user@target ~
+▸ with-unhidden-gitdir  git log --all --graph --oneline
+````
+
+From a user's home that already has my setup installed, it's easier to deploy
+the `main` branch (or the user's branch) to some other host:
+```shell
+user@target1 ~
+▸ my-deploy-setup $TARGET2_URL
+```
